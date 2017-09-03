@@ -90,3 +90,5 @@ class Consulta
         return mysql_insert_id($this->BD->Link);
     }
 }
+
+// helpers/class.BD.inc.php

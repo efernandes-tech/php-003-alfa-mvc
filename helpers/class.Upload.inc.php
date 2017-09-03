@@ -82,3 +82,5 @@ class Upload
         return false;
     }
 }
+
+// helpers/class.Upload.inc.php
