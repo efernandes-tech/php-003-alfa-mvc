@@ -18,8 +18,10 @@ require_once("app/controller/class.LoginController.inc.php");
 
 // Classes obrigatórias.
 require_once 'helpers/class.BD.inc.php';
-require_once 'helpers/class.TemplatePower.inc.php';
 require_once 'helpers/class.Upload.inc.php';
+
+// Classes de terceiros.
+require_once 'vendor/class.TemplatePower.inc.php';
 
 // Configuração do sistema.
 require_once 'system/config.inc.php';

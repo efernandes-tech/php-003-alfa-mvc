@@ -10,7 +10,7 @@ class ProdutoController extends Controller
         // Somente para usuários logados.
         $this->RestringeAcesso();
 
-        $this->InicializaView("produto_listar.htm");
+        $this->InicializaView("produto_listar.html");
 
         $pro = new ProdutoModel();
 
@@ -40,7 +40,7 @@ class ProdutoController extends Controller
         // Somente para usuários logados.
         $this->RestringeAcesso();
 
-        $this->InicializaView("produto_editar.htm");
+        $this->InicializaView("produto_editar.html");
 
         // Inicializa.
         $fabId = 0;

@@ -15,7 +15,7 @@ class Controller
     * @param string $master Nome da Master Page.
     * @param string $include Nome do include block se houver.
     */
-    public function InicializaView($include="", $master="master.htm") {
+    public function InicializaView($include="", $master="master.html") {
         $this->tpl = new TemplatePower("app/view/$master");
 
         if ($include != "") {

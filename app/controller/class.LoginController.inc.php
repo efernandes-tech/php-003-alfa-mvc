@@ -3,7 +3,7 @@
 class LoginController extends Controller
 {
     public function Index() {
-        $this->InicializaView('login_form.htm');
+        $this->InicializaView('login_form.html');
 
         $this->Exibe();
     }
@@ -34,7 +34,7 @@ class LoginController extends Controller
             header("Location: index.php?controller=login");
         }
 
-        $this->InicializaView('bemvindo.htm');
+        $this->InicializaView('bemvindo.html');
 
         $this->Exibe();
     }
