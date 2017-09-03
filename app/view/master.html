@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Gerenciamento de Conteúdo</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link href="css/estilo.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div id="cabecalho">
+        <h1> Gerenciamento de Conteúdo </h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <!-- START BLOCK : menu-logado -->
+            <li><a href="index.php?controlador=produto&metodo=listar">Produtos</a></li>
+            <li><a href="">Fabricantes</a></li>
+            <li><a href="">Linhas</a></li>
+            <li><a href="index.php?controlador=login&metodo=sair">Sair</a></li>
+            <!-- END BLOCK : menu-logado -->
+            <!-- START BLOCK : menu-login -->
+            <li><a href="index.php?controlador=login">Login</a></li>
+            <!-- END BLOCK : menu-login -->
+        </ul>
+    </div>
+    <div id="conteudo">
+        <!-- INCLUDE BLOCK : conteudo -->
+    </div>
+    <!-- START BLOCK : mensagem -->
+    <script type="text/javascript">
+        alert('{mensagem}');
+    </script>
+    <!-- END BLOCK : mensagem -->
+</body>
+</html>

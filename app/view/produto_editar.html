@@ -1,0 +1,87 @@
+<form name="frm" method="post" action="index.php" enctype="multipart/form-data">
+    <input type="hidden" name="controlador" value="produto">
+    <input type="hidden" name="metodo" value="salvar">
+    <input type="hidden" name="id" value="{id}">
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>
+                <input type="text" name="nome" size="50" value="{nome}">
+            </td>
+        </tr>
+        <tr>
+            <td>Descrição</td>
+            <td>
+                <textarea name="descricao" rows="2" cols="50">{descricao}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>Linha</td>
+            <td>
+                <select name="linha">
+                    <option value="">selecione uma linha</option>
+                    <!-- START BLOCK : item-linha -->
+                    <option value="{id}" {sel}>{nome}</option>
+                    <!-- END BLOCK : item-linha -->
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Fabricante</td>
+            <td>
+                <select name="fabricante">
+                    <option value="">selecione um fabricante</option>
+                    <!-- START BLOCK : item-fabricante -->
+                    <option value="{id}" {sel}>{nome}</option>
+                    <!-- END BLOCK : item-fabricante -->
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Preço</td>
+            <td>
+                <input type="text" name="preco" value="{preco}">
+            </td>
+        </tr>
+        <tr>
+            <td>Peso</td>
+            <td>
+                <input type="text" name="peso" value="{peso}">
+            </td>
+        </tr>
+        <tr>
+            <td>Estoque</td>
+            <td>
+                <input type="text" name="qtd_estoque" value="{qtd_estoque}">
+            </td>
+        </tr>
+        <tr>
+            <td>Ativo</td>
+            <td><input type="checkbox" name="ativo" {ativo}></td>
+        </tr>
+        <tr>
+            <td>Destaque</td>
+            <td><input type="checkbox" name="destaque" {destaque}></td>
+        </tr>
+        <tr>
+            <td>Imagem</td>
+            <td>
+                <input type="file" name="imagem">
+            </td>
+        </tr>
+        <!-- START BLOCK : imagem -->
+        <tr>
+            <td>Imagem</td>
+            <td>
+                <img src="images/{imagem}" height="80" alt="imagem">
+            </td>
+        </tr>
+        <!-- END BLOCK : imagem -->
+        <tr>
+            <td></td>
+            <td>
+            <input type="submit" name="bt_salvar" value="salvar">
+            </td>
+        </tr>
+    </table>
+</form>

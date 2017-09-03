@@ -1,0 +1,54 @@
+* {
+    font-family: "Georgia", serif;
+}
+body {
+    margin: 0px;
+}
+a {
+    color: #00f;
+    text-decoration: none;
+}
+th {
+    color: white;
+    background-color: black;
+    padding: 3px;
+}
+#cabecalho {
+    color: white;
+    background-color: #006666;
+    padding: 25px;
+}
+#cabecalho h1 {
+    margin: 0px;
+}
+#menu {
+    border-bottom: solid 1px black;
+    border-top: solid 1px black;
+    height: 30px;
+}
+#menu ul {
+    margin: 0px;
+    padding: 0px;
+}
+#menu li {
+    list-style: none;
+    float: left;
+    padding: 5px 10px 2px 2px;
+}
+#menu a:hover{
+    background-color: #ccc;
+};
+#conteudo{
+
+}
+#bemvindo {
+    border: solid 1px black;
+    padding: 30px;
+    width: 300px;
+    margin-left: 30%;
+    text-align: center;
+}
+#bemvindo h2 {
+    text-align: center;
+    font-size: 16px;
+}

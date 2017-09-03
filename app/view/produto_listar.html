@@ -1,0 +1,41 @@
+<a href="index.php?controlador=produto&metodo=editar">
+    Novo produto
+</a><br>
+Total de produtos cadastrados: {total}<br>
+<table width="100%">
+    <tr>
+        <th width="60%">Descrição</th>
+        <th>Preço</th>
+        <th>Estoque</th>
+        <th>Ações</th>
+    </tr>
+    <!-- START BLOCK : item -->
+    <tr>
+        <td>{nome}</td>
+        <td>{preco}</td>
+        <td>{qtd_estoque}</td>
+        <td>
+            <a href="index.php?controlador=produto&metodo=editar&id={id}">
+                editar
+            </a>
+            ::
+            <a href="index.php?controlador=produto&metodo=excluir&id={id}">
+                excluir
+            </a>
+        </td>
+    </tr>
+    <!-- END BLOCK : item -->
+    <!-- START BLOCK : semregistros -->
+    <tr>
+        <td colspan="4" align="center">
+            nenhum produto cadastrado
+        </td>
+    </tr>
+    <!-- END BLOCK : semregistros -->
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+</table>
