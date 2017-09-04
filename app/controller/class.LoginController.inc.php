@@ -13,11 +13,12 @@ class LoginController extends Controller
             $login = new LoginModel();
 
             if ($login->Validar($_POST['usuario'], $_POST['senha'])) {
+
                 $_SESSION['logado'] = $_POST['usuario'];
 
                 header("Location: index.php?controlador=login&metodo=bemvindo");
 
-                return;
+                return true;
             }
         }
 
