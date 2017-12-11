@@ -11,12 +11,10 @@ class LoginController extends Controller
     public function Validar() {
         if (isset($_POST['usuario']) && isset($_POST['senha'])) {
             $login = new LoginModel();
-
             if ($login->Validar($_POST['usuario'], $_POST['senha'])) {
-
                 $_SESSION['logado'] = $_POST['usuario'];
 
-                header("Location: index.php?controlador=login&metodo=bemvindo");
+                header("Location: index.php?controller=login&metodo=bemvindo");
 
                 return true;
             }
@@ -24,7 +22,7 @@ class LoginController extends Controller
 
         $_SESSION['mensagem'] = "Usuário ou senha inválida!";
 
-        header("Location: index.php?controlador=login");
+        header("Location: index.php?controller=login");
     }
 
     // Exemplo de método/página com acesso restrito usuários logados no sistema.
@@ -46,7 +44,11 @@ class LoginController extends Controller
 
         unset($_SESSION['logado']);
 
-        header("Location: index.php?controlador=login");
+        header("Location: index.php?controller=login");
+    }
+
+    public function teste() {
+        echo "string";
     }
 }
 

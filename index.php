@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set("display_errors", true);
+
 // Classes base.
 require_once 'system/class.Controller.inc.php';
 require_once 'system/class.Model.inc.php';
@@ -26,22 +29,24 @@ require_once 'vendor/class.TemplatePower.inc.php';
 // Configuração do sistema.
 require_once 'system/config.inc.php';
 
-// Controlador e método default.
+session_start();
+
+// controller e método default.
 $classe = "IndexController";
 $metodo = "Index";
 
-// Controlador e método que forem informados.
-if (isset($_REQUEST['controlador'])) {
-    $controlador = $_REQUEST['controlador'];
-    $classe = $controlador . 'Controller';
+// controller e método que forem informados.
+if (isset($_REQUEST['controller'])) {
+    $controller = $_REQUEST['controller'];
+    $classe = $controller . 'Controller';
 
     if (isset($_REQUEST['metodo'])) {
         $metodo = $_REQUEST['metodo'];
     }
 }
 
-// Executa o controlador.
-$controlador = new $classe();
-$controlador->$metodo();
+// Executa o controller.
+$controller = new $classe();
+$controller->$metodo();
 
 // index.php

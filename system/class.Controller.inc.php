@@ -1,8 +1,8 @@
 <?php
 
 /**
-* Classe mãe para os Controladores.
-* Aqui vão as definições comuns a todos os controladores.
+* Classe mãe para os controlleres.
+* Aqui vão as definições comuns a todos os controlleres.
 * @author edersonlrf
 *
 */
@@ -11,7 +11,7 @@ class Controller
     public $tpl;
 
     /**
-    * Inicializa a VIEW do Controlador.
+    * Inicializa a VIEW do controller.
     * @param string $master Nome da Master Page.
     * @param string $include Nome do include block se houver.
     */

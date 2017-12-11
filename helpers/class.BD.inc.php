@@ -21,21 +21,21 @@ class BD
 
     public function Abrir($servidor, $usuario, $senha, $banco, $charset) {
         // Conecta ao servidor.
-        $this->Link = mysql_connect($servidor, $usuario, $senha) or die(
+        $this->Link = mysqli_connect($servidor, $usuario, $senha, $banco) or die(
             "Não foi possível conectar ao servidor " . $servidor
             . " com o usuario " . $usuario . " e senha *****.<br>".
-            "Erro: " . mysql_error()
+            "Erro: " . mysqli_error($this->Link)
         );
 
         // Seleciona o banco de dados.
-        mysql_select_db($banco, $this->Link) or die(
+        mysqli_select_db($this->Link, $banco) or die(
             "Não foi possível abrir o banco " . $banco
-            . " no servidor " . $servidor . "<br>" . mysql_error()
+            . " no servidor " . $servidor . "<br>" . mysqli_error($this->Link)
         );
 
         // Acerta o cjto de caracteres da conexão:
         // utf8 (UTF-8), latin1 (ISO-5589-1/europeu ocidental)
-        mysql_set_charset($charset);
+        mysqli_set_charset($this->Link, $charset);
 
         $this->Servidor = $servidor;
         $this->Usuario = $usuario;
@@ -45,7 +45,7 @@ class BD
 
     public function Fechar() {
         if ($this->Link!=null) {
-            @mysql_close($this->Link);
+            @mysqli_close($this->Link);
 
             $this->Link = null;
         }
@@ -64,12 +64,12 @@ class Consulta
             die("entrou");
         }
 
-        $this->resultado = mysql_query($sql, $bd->Link);
+        $this->resultado = mysqli_query($bd->Link, $sql);
 
         if ($this->resultado) {
             // Comando executado com sucesso.
         } else {
-            die("Erro ao executar comando " . $sql . "<br>" . mysql_error());
+            die("Erro ao executar comando " . $sql . "<br>" . mysqli_error($this->Link));
         }
 
         $this->BD = $bd;
@@ -77,17 +77,19 @@ class Consulta
 
     // Retorna a quantidade de registros resultante do comando SQL.
     public function Linhas() {
-        return mysql_num_rows($this->resultado);
+        return mysqli_num_rows($this->resultado);
     }
 
     // Retorna um valor de um campo específico.
     // Ex.: $obj->Campo(0, 'titulo')
     public function Campo($linha, $campo) {
-        return mysql_result($this->resultado, $linha, $campo);
+        $this->resultado->data_seek($linha);
+        $data = $this->resultado->fetch_assoc();
+        return $data[$campo];
     }
 
     public function InsertId() {
-        return mysql_insert_id($this->BD->Link);
+        return mysqli_insert_id($this->BD->Link);
     }
 }
 

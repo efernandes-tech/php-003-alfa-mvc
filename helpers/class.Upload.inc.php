@@ -53,6 +53,7 @@ class Upload
                     }
 
                     move_uploaded_file($_FILES[$campo]['tmp_name'], $arqDestino);
+                    $this->ehUpload = true;
                 }
             } else {
                 // O PHP nos informa que algum erro ocorreu.
